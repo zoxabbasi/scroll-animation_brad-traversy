@@ -1,0 +1,59 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #efedd6;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+
+    /* //We want a scroll bar, so we don't set 'overflow:hidden' */
+    /* overflow: hidden; */
+}
+
+h1 {
+    margin: 10px;
+}
+
+.box {
+    background-color: steelblue;
+    color: #fff;
+
+    /* To align the h2 to the center horizontally and vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+
+    /* To move the boxes on X-axis(horizontally) */
+    transform: translateX(400%);
+
+    /* For smooth transition of the box on transfrom property*/
+    transition: transform 0.4s ease;
+}
+
+/* To make ever other box to come from other side of X-axis */
+.box:nth-of-type(even) {
+    transform: translateX(-400%);
+}
+
+.box.show {
+
+    /* Default for the box */
+    transform: translateX(0);
+}
+
+.box h2 {
+    font-size: 45px;
+}
